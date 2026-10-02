@@ -19,3 +19,8 @@ Thumbs.db
 # Level editor temp files (optional but recommended)
 level*_data.csv.bak
 *.pkl
+# web build output
+build/
+save.json
+levels/custom/
+tools/out/
