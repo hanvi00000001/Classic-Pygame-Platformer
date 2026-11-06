@@ -141,6 +141,40 @@ python level_creator.py     # the original editor
 
 ## Controls
 
+## Input / Output
+
+### Input
+
+The game receives input from the player through the keyboard or gamepad.
+
+| Input         | Description                                 |
+| ------------- | ------------------------------------------- |
+| Left / Right  | Move the character                          |
+| Space / K / C | Jump                                        |
+| Shift / X / L | Dash                                        |
+| F / J / V     | Shoot fireballs when the Fire Orb is active |
+| Down + Jump   | Drop through one-way platforms              |
+| Esc / P       | Pause the game                              |
+
+### Output
+
+The game responds to player actions in real time:
+
+- Character movement, jumping, dashing and attacking.
+- Animations, sound effects and visual effects.
+- Coins, power-ups and health updates.
+- Enemy and boss interactions.
+- Level completion, results and player progress.
+
+### Example
+
+1. Player presses the Right Arrow key.
+2. The character moves to the right.
+3. Player presses Space to jump.
+4. The character jumps according to the game's physics.
+5. Player collects a coin.
+6. The coin disappears and the score increases.
+
 | Action                   | Keyboard                  | Gamepad       |
 | ------------------------ | ------------------------- | ------------- |
 | Move                     | ← → / A D (Q D on AZERTY) | stick / d-pad |
@@ -205,6 +239,30 @@ legacy_2022/            the original 2022 game, preserved as it was
 tools/                  level builder, screenshot/GIF capture, mechanics tests, web build
 ```
 
+## Testing
+
+The game includes automated mechanics tests.
+
+Run the tests with:
+
+```bash
+python tools/mechanics_test.py
+```
+
+The test suite checks:
+
+- Full jump and short hop.
+- Running jump across gaps.
+- Spring launch.
+- Slope movement and climbing.
+- Wall jump.
+- Dash and floor breaking.
+- One-way platform drop-through.
+- Enemy stomp interaction.
+- Boss damage and defeat.
+
+**Latest test result: ALL PASSED (14/14 checks).**
+
 ## Developer tools
 
 ```bash
@@ -214,6 +272,20 @@ python tools/capture.py          # README screenshots;  --gif for the animated o
 python tools/build_levels.py     # regenerate the campaign levels from the authoring script
 python tools/build_web.py        # WebAssembly build with pygbag -> build/web
 ```
+
+## Student Contribution
+
+Added `tools/show_stats.py`, a standalone Python tool
+that reads the game's save.json file and displays:
+
+- Number of levels with recorded results
+- Number of unlocked levels
+- Total recorded coins, gems, and scores
+- Best rank achieved
+- Detailed statistics for each level
+
+This tool uses Python's json and pathlib modules.
+It does not modify the original game logic.
 
 The browser version is built with [pygbag](https://github.com/pygame-web/pygbag) and deployed to GitHub Pages
 by [`.github/workflows/pages.yml`](.github/workflows/pages.yml) on every push to `main`.
