@@ -24,3 +24,6 @@ build/
 save.json
 levels/custom/
 tools/out/
+.venv/
+__pycache__/
+*.pyc

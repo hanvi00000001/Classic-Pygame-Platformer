@@ -11,7 +11,7 @@ a boss, loot, lighting, particles and a soundtrack. **Every sprite, tile, backgr
 or synthesised in code.** The new game ships no image or audio files; only the bonus level reuses the 2022 background paintings.
 
 | ![Title screen](screenshots/2026/title.png) | ![World map](screenshots/2026/map.png) |
-|---|---|
+| ------------------------------------------- | -------------------------------------- |
 
 The original 2022 code is preserved, untouched, in [`legacy_2022/`](legacy_2022), and its level is playable
 inside the remaster as a bonus stage.
@@ -20,20 +20,20 @@ inside the remaster as a bonus stage.
 
 ## 2022 vs 2026
 
-| | 2022 | 2026 |
-|---|---|---|
-| **Gameplay** | ![2022 gameplay](screenshots/2022/gameplay_2.png) | ![2026 gameplay](screenshots/2026/meadow_hill.png) |
-| **Level editor** | ![2022 editor](screenshots/2022/level_editor_1.png) | ![2026 editor](screenshots/2026/editor.png) |
-| **The old level** | ![2022 level](screenshots/2022/gameplay_1.png) | ![2022 level in the remaster](screenshots/2026/legacy.png) |
+|                   | 2022                                                | 2026                                                       |
+| ----------------- | --------------------------------------------------- | ---------------------------------------------------------- |
+| **Gameplay**      | ![2022 gameplay](screenshots/2022/gameplay_2.png)   | ![2026 gameplay](screenshots/2026/meadow_hill.png)         |
+| **Level editor**  | ![2022 editor](screenshots/2022/level_editor_1.png) | ![2026 editor](screenshots/2026/editor.png)                |
+| **The old level** | ![2022 level](screenshots/2022/gameplay_1.png)      | ![2022 level in the remaster](screenshots/2026/legacy.png) |
 
 <details>
 <summary>More 2022 screenshots</summary>
 
-| | |
-|---|---|
+|                                          |                                          |
+| ---------------------------------------- | ---------------------------------------- |
 | ![](screenshots/2022/level_editor_2.png) | ![](screenshots/2022/level_editor_4.png) |
-| ![](screenshots/2022/level_editor_3.png) | ![](screenshots/2022/1.png) |
-| ![](screenshots/2022/4.png) | |
+| ![](screenshots/2022/level_editor_3.png) | ![](screenshots/2022/1.png)              |
+| ![](screenshots/2022/4.png)              |                                          |
 
 </details>
 
@@ -59,6 +59,7 @@ A new engine built around the same idea: a tile platformer with slopes and a lev
 ## Features
 
 **The hero**
+
 - An original hooded wanderer with glowing eyes and a **physics-simulated scarf** (verlet rope) that streams
   behind every move. The scarf turns grey when your dash is spent.
 - Modern platformer feel: coyote time, jump buffering, variable jump height, floaty apex, squash & stretch,
@@ -68,13 +69,14 @@ A new engine built around the same idea: a tile platformer with slopes and a lev
 - Power-ups: 🔥 **Fire orb** (bouncing fireballs), 🪶 **Feather** (double jump), 🫧 **Shield bubble** (absorbs one hit).
 
 **The world**
+
 - 5 hand-designed worlds plus a bonus level, each with its own palette, parallax backdrop, weather, lighting and
   music:
 
-| | | |
-|---|---|---|
+|                                                                                                       |                                                                                                         |                                                                                                    |
+| ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 | ![Meadow](screenshots/2026/meadow.png) **1 · Verdant Meadow**<br>sunlit hills, pollen, tutorial signs | ![Caves](screenshots/2026/caves.png) **2 · Glimmer Caves**<br>dynamic lighting, glowing crystals, wisps | ![Sunset](screenshots/2026/sunset.png) **3 · Sunset Ruins**<br>crumbling bridges, moving platforms |
-| ![Frost](screenshots/2026/frost.png) **4 · Frostpeak**<br>aurora sky, ice physics, wall-jump climb | ![Volcano](screenshots/2026/volcano.png) **5 · Molten Core**<br>lava, embers, rising heat | ![Boss](screenshots/2026/boss.png) **Boss · The Molten King**<br>two-phase fight with shockwaves |
+| ![Frost](screenshots/2026/frost.png) **4 · Frostpeak**<br>aurora sky, ice physics, wall-jump climb    | ![Volcano](screenshots/2026/volcano.png) **5 · Molten Core**<br>lava, embers, rising heat               | ![Boss](screenshots/2026/boss.png) **Boss · The Molten King**<br>two-phase fight with shockwaves   |
 
 - **Proper 45° slopes.** The 2022 version's signature feature is kept but rewritten as part of a general physics
   body, with step-up so slopes join flat ground cleanly.
@@ -89,6 +91,7 @@ A new engine built around the same idea: a tile platformer with slopes and a lev
   ![Boss fight](screenshots/2026/gameplay_boss.gif)
 
 **Presentation**
+
 - Dynamic lighting (light maps plus additive bloom), particles, screen shake, hit-stop, slow-motion boss finish
   and iris transitions.
 - Animated title screen, world map with level records, pause menu, results screen with an S/A/B/C rank,
@@ -103,7 +106,8 @@ A new engine built around the same idea: a tile platformer with slopes and a lev
 - Keyboard (QWERTY and AZERTY) and gamepad support. Progress and best times are saved.
 
 **The level editor**
-- Built into the game (title → *Level Editor*). Paint with the real tiles and entity previews, switch biome
+
+- Built into the game (title → _Level Editor_). Paint with the real tiles and entity previews, switch biome
   with `T`, and press `F5` to play-test instantly.
 - Levels are **plain-text files** ([`levels/`](levels)), one character per tile, so you can also edit them in a
   text editor.
@@ -113,10 +117,12 @@ A new engine built around the same idea: a tile platformer with slopes and a lev
 ## How to run
 
 ```bash
-git clone https://github.com/RayenMalouche/Classic-Pygame-Platformer.git
+git clone https://github.com/hanvi00000001/Classic-Pygame-Platformer.git
 cd Classic-Pygame-Platformer
 pip install -r requirements.txt     # pygame-ce
 python main.py
+Python 3.11.2
+pygame-ce 2.5.8
 ```
 
 ```bash
@@ -135,15 +141,15 @@ python level_creator.py     # the original editor
 
 ## Controls
 
-| Action | Keyboard | Gamepad |
-|---|---|---|
-| Move | ← → / A D (Q D on AZERTY) | stick / d-pad |
-| Jump (hold for higher) | Space / K / C | A |
-| Dash (8 directions) | Shift / X / L | X / RB |
-| Fire (with the fire orb) | F / J / V | B / Y |
-| Drop through platforms | ↓ + Jump | down + A |
-| Pause | Esc / P | Start |
-| Fullscreen | F11 | |
+| Action                   | Keyboard                  | Gamepad       |
+| ------------------------ | ------------------------- | ------------- |
+| Move                     | ← → / A D (Q D on AZERTY) | stick / d-pad |
+| Jump (hold for higher)   | Space / K / C             | A             |
+| Dash (8 directions)      | Shift / X / L             | X / RB        |
+| Fire (with the fire orb) | F / J / V                 | B / Y         |
+| Drop through platforms   | ↓ + Jump                  | down + A      |
+| Pause                    | Esc / P                   | Start         |
+| Fullscreen               | F11                       |               |
 
 **Editor:** left click paint · right click erase · mouse wheel or `1-9` pick a tile · `TAB` next palette page ·
 arrows/WASD or middle-drag to pan · `T` theme · `G` grid · `F5` play-test · `Ctrl+S` save (to
@@ -162,20 +168,20 @@ sign1: HIT BLOCKS FROM BELOW
 ########/####\....###########
 ```
 
-| Char | Tile / entity | Char | Tile / entity |
-|---|---|---|---|
-| `#` | ground (auto-tiled) | `o` | coin |
-| `=` | stone bricks | `*` | star shard |
-| `I` | ice (slippery) | `h` | heart |
-| `/` `\` | 45° slopes | `$` | treasure chest |
-| `-` | one-way platform | `P` | player start |
-| `^` | spikes | `C` | checkpoint |
-| `~` | lava | `E` | exit portal |
-| `B` | breakable brick | `s` | spring |
-| `?` | coin block | `m` / `M` | moving platform (horizontal / vertical) |
-| `!` | power-up block | `x` | crumbling platform |
-| `g` `k` `b` `t` `q` | slime, spike beetle, bat, spitter, wisp | `K` | the Molten King |
-| `l` `c` | lantern, glow crystal (lights) | `1`-`9` | sign (text from `signN:` in the header) |
+| Char                | Tile / entity                           | Char      | Tile / entity                           |
+| ------------------- | --------------------------------------- | --------- | --------------------------------------- |
+| `#`                 | ground (auto-tiled)                     | `o`       | coin                                    |
+| `=`                 | stone bricks                            | `*`       | star shard                              |
+| `I`                 | ice (slippery)                          | `h`       | heart                                   |
+| `/` `\`             | 45° slopes                              | `$`       | treasure chest                          |
+| `-`                 | one-way platform                        | `P`       | player start                            |
+| `^`                 | spikes                                  | `C`       | checkpoint                              |
+| `~`                 | lava                                    | `E`       | exit portal                             |
+| `B`                 | breakable brick                         | `s`       | spring                                  |
+| `?`                 | coin block                              | `m` / `M` | moving platform (horizontal / vertical) |
+| `!`                 | power-up block                          | `x`       | crumbling platform                      |
+| `g` `k` `b` `t` `q` | slime, spike beetle, bat, spitter, wisp | `K`       | the Molten King                         |
+| `l` `c`             | lantern, glow crystal (lights)          | `1`-`9`   | sign (text from `signN:` in the header) |
 
 ## Project structure
 
